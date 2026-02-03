@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FiEdit3 } from 'react-icons/fi';
-import { PricingEditorModal } from './PricingEditorModal';
+import { PricingEditorModal, type PricingData } from './PricingEditorModal';
 
 export const PartnerPricing = () => {
     const [isEditorOpen, setIsEditorOpen] = useState(false);
@@ -25,7 +25,7 @@ export const PartnerPricing = () => {
         );
     };
 
-    const handleSavePricing = (newData: any) => {
+    const handleSavePricing = (newData: PricingData) => {
         setBasePrintPrice(newData.basePrintPrice);
         setBaseShippingPrice(newData.baseShippingPrice);
         setExtraFees(newData.extraFees);

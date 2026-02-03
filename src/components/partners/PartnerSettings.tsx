@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Toggle } from '../common/Toggle';
 
 export const PartnerSettings = () => {
     const [maxSheets, setMaxSheets] = useState('500');
@@ -6,17 +7,6 @@ export const PartnerSettings = () => {
     const [isWeekendAvailable, setIsWeekendAvailable] = useState(true);
     const [isPartnerActive, setIsPartnerActive] = useState(true);
     const [isAutoAssignmentEnabled, setIsAutoAssignmentEnabled] = useState(true);
-
-    const Toggle = ({ enabled, setEnabled }: { enabled: boolean; setEnabled: (v: boolean) => void }) => (
-        <button
-            onClick={() => setEnabled(!enabled)}
-            className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${enabled ? 'bg-blue-600' : 'bg-gray-200'}`}
-        >
-            <span
-                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${enabled ? 'translate-x-5' : 'translate-x-0'}`}
-            />
-        </button>
-    );
 
     return (
         <div className="space-y-6">
